@@ -36,18 +36,13 @@ func main() {
 
 		currentLine := scanner.Text()
 		for _, lineToFilter := range line {
-			if stringContains(currentLine, lineToFilter) {
+			if strings.Contains(currentLine, lineToFilter) {
 				appendToLog(currentLine, saveFileName)
 				fmt.Println(currentLine)
 			}
 		}
 
 	}
-}
-
-func stringContains(scan, value string) bool {
-	doesContain := strings.Contains(scan, value)
-	return doesContain
 }
 
 // This func will make file if doesn't exist, if does it will append log data to it
